@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Changing fonts</title>
+    <style media="screen">
+      *{
+        padding:0;
+        margin:0;
+      }
+      body{
+        background-color:rgb(5,30,35);
+      }
+
+      h1{
+        line-height:95vh;
+        text-align:center;
+        color:rgb(200,200,200);
+        font-size:3em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="text">Hello World</h1>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const font = ["verdana","arial","Times New Roman","Tahoma","Trebuchet MS","Georgia","Garamond","Courier New","Brush Script MT"];
+    function loop(){
+      setTimeout(function() {
+        random = Math.floor(Math.random()*font.length);
+        document.getElementById("text").style.fontFamily = font[random];
+        loop();
+      }, 200);
+    }
+
+    loop();
+
+  </script>
+</html>
